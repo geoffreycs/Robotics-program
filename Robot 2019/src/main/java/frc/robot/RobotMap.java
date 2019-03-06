@@ -55,6 +55,7 @@ public class RobotMap {
   public static final int DRIVETRAIN_RIGHT_FRONT_TALON = 5;
   public static final int DRIVETRAIN_RIGHT_BACK_TALON = 6;
   public static final int INTAKE_TALON_2 = 2;
+  public static final int LIFT_TALON_L = 9;
   
   //public static final int SUBSYSTESIDE_POSITION_SPEEDCONTROLLER = PWM Port;
 

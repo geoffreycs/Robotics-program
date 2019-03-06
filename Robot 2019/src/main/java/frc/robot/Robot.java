@@ -10,14 +10,13 @@ package frc.robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
-//import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.Intake;
-//import frc.robot.subsystems.Lift;
+import frc.robot.subsystems.Lift;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -31,6 +30,7 @@ public class Robot extends TimedRobot {
 public static ExampleSubsystem subsystem = new ExampleSubsystem();
   public static Drivetrain drivetrain = null;
   public static Intake Intake = new Intake();
+  public static Lift Lift = new Lift();
   public static OI oi;
 
 

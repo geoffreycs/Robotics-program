@@ -10,10 +10,10 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import frc.robot.commands.Down;
 import frc.robot.commands.In;
-//import frc.robot.commands.Fall;
-//import frc.robot.commands.Rise;
 import frc.robot.commands.Out;
+import frc.robot.commands.Up;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -30,9 +30,9 @@ Button button2 = new JoystickButton(driverController, 2);
 Button button3 = new JoystickButton(driverController, 3);
   public OI() {
     button4 = new JoystickButton(driverController, 4);
-    //button4.whileHeld(new Rise());
+    button4.whileHeld(new Up());
     button1 = new JoystickButton(driverController, 1);
-    //button1.whileHeld(new Fall());
+    button1.whileHeld(new Down());
     button2 = new JoystickButton(driverController, 2);
     button2.whileHeld(new In());
     button3 = new JoystickButton(driverController, 3);
