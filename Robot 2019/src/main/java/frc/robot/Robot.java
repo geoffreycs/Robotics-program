@@ -7,6 +7,7 @@
 
 package frc.robot;
 
+import edu.wpi.first.cameraserver.CameraServer;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -44,7 +45,7 @@ public static ExampleSubsystem subsystem = new ExampleSubsystem();
   @Override
   public void robotInit() {
     drivetrain = new Drivetrain();
-   // lift = new Lift();
+    CameraServer.getInstance().startAutomaticCapture();
     oi = new OI();
     chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
