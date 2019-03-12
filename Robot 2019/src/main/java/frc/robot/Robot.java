@@ -8,6 +8,7 @@
 package frc.robot;
 
 import edu.wpi.first.cameraserver.CameraServer;
+import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -18,6 +19,7 @@ import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.Lift;
+import frc.robot.subsystems.Punch;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -32,12 +34,14 @@ public static ExampleSubsystem subsystem = new ExampleSubsystem();
   public static Drivetrain drivetrain = null;
   public static Intake Intake = new Intake();
   public static Lift Lift = new Lift();
+  public static Punch punch = new Punch();
   public static OI oi;
 
 
   Command autonomousCommand;
   SendableChooser<Command> chooser = new SendableChooser<>();
 
+  Compressor compressor = new Compressor();
   /**
    * This function is run when the robot is first started up and should be
    * used for any initialization code.
@@ -50,6 +54,8 @@ public static ExampleSubsystem subsystem = new ExampleSubsystem();
     chooser.setDefaultOption("Default Auto", new ExampleCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", chooser);
+
+    compressor.start();
   }
 
   /**

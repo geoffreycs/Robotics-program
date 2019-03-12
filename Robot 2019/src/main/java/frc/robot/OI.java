@@ -10,6 +10,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import frc.robot.commands.DoublePunch;
 import frc.robot.commands.Down;
 import frc.robot.commands.In;
 import frc.robot.commands.Out;
@@ -28,6 +29,13 @@ Button button1 = new JoystickButton(driverController, 1);
 Button button4 = new JoystickButton(driverController, 4);
 Button button2 = new JoystickButton(driverController, 2);
 Button button3 = new JoystickButton(driverController, 3);
+JoystickButton doublePunch = new JoystickButton(driverController, 5);
+JoystickButton doubleRetract = new JoystickButton(driverController, 6);
+
+public Joystick getDriverController() {
+  return driverController;
+}
+
   public OI() {
     button4 = new JoystickButton(driverController, 4);
     button4.whileHeld(new Up());
@@ -37,6 +45,8 @@ Button button3 = new JoystickButton(driverController, 3);
     button2.whileHeld(new In());
     button3 = new JoystickButton(driverController, 3);
     button3.whileHeld(new Out());
+    doublePunch.whileHeld(new DoublePunch(true));
+    doubleRetract.whileHeld(new DoublePunch(false));
 
 
 

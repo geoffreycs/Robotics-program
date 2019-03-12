@@ -7,21 +7,37 @@
 
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 import frc.robot.RobotMap;
+
 
 /**
  * Add your docs here.
  */
-public class Lift extends Subsystem {
+public class Punch extends Subsystem {
   // Put methods for controlling this subsystem
-  Talon talonL = null;
-  Talon talonR = null;
   // here. Call these from Commands.
-  public Lift(){
-    talonL = new Talon(RobotMap.LIFT_TALON_L);
-    talonR = new Talon(RobotMap.LIFT_TALON_R);
+
+
+  // Instantiation of double solenoid
+  // PCM channels are in RobotMap
+  DoubleSolenoid doubleS = new DoubleSolenoid(RobotMap.doubleSolenoid1, RobotMap.doubleSolenoid2);
+
+  // "Punches" single solenoid outwards
+  // "Punches" double solenoid outwards
+  public void doublePunch(){
+    doubleS.set(DoubleSolenoid.Value.kReverse);
+  }
+
+  // Retracts double solenoid
+  public void doubleRetract(){
+    doubleS.set(DoubleSolenoid.Value.kForward);
+  }
+
+  // Ensures no movement of double solenoid
+  public void doubleIdle(){
+    doubleS.set(DoubleSolenoid.Value.kOff);
   }
 
   @Override
@@ -29,19 +45,4 @@ public class Lift extends Subsystem {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
   }
-
-public void Up() {
-talonL.set(0.5);
-talonR.set(-0.5);
-}
-
-public void Down() {
-  talonL.set(-0.5);
-  talonR.set(0.5);
-}
-
-public void Stop() {
-  talonL.set(0);
-  talonR.set(0);
-}
 }
