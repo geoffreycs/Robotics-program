@@ -19,8 +19,9 @@ public class OI {
 
   Joystick driverStick = new Joystick(0);
 
-  JoystickButton doublePunch = new JoystickButton(driverStick, 4);
-  JoystickButton doubleRetract = new JoystickButton(driverStick, 5);
+
+  JoystickButton doublePunch = new JoystickButton(driverStick, 5);
+	JoystickButton doubleRetract = new JoystickButton(driverStick, 6);
   //// CREATING BUTTONS
   // One type of button is a joystick button which is any button on a
   //// joystick.
@@ -28,6 +29,9 @@ public class OI {
   // number it is.
   // Joystick stick = new Joystick(port);
   // Button button = new JoystickButton(stick, buttonNumber);
+  public Joystick getDriverStick() {
+    return driverStick;
+  }
 
   // There are a few additional built in buttons you can use. Additionally,
   // by subclassing Button you can create custom triggers and bind those to
@@ -37,8 +41,8 @@ public class OI {
   // Once you have a button, it's trivial to bind it to a button in one of
   // three ways:
 public OI(){
-doublePunch.whenPressed(new DoublePunch(true));
-doublePunch.whenPressed(new DoublePunch(false));
+  doublePunch.whileHeld(new DoublePunch(true));
+  doubleRetract.whileHeld(new DoublePunch(false));
 }
   // Start the command when the button is pressed and let it run the command
   // until it is finished as determined by it's isFinished method.

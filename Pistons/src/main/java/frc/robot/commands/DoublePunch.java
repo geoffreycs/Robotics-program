@@ -12,47 +12,45 @@ import frc.robot.Robot;
 
 public class DoublePunch extends Command {
 
+  // True direction indicates "punching," false indicates retracting
+  // of the solenoid
   boolean direction = true;
 
-
   public DoublePunch(boolean direction) {
-
     this.direction = direction;
-    // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
   }
 
-  // Called just before this Command runs the first time
+  // Making sure the solenoid is not already moving before
+  // executing the punch/retract
   @Override
   protected void initialize() {
+
     Robot.punch.doubleIdle();
   }
 
-  // Called repeatedly when this Command is scheduled to run
+  // Takes in the boolean from the constructor to punch or retract
   @Override
   protected void execute() {
     if(direction){
-    Robot.punch.doublePunch();
-  }else{
-    Robot.punch.doubleRetract();
+      Robot.punch.doublePunch();
+    }else{
+      Robot.punch.doubleRetract();
+    }
   }
-}
-  
 
-  // Make this return true when this Command no longer needs to run execute()
+  // Returns true immediately so execute only runs once
   @Override
   protected boolean isFinished() {
-    return true;
+    return false;
   }
 
-  // Called once after isFinished returns true
+  // Ensures that the solenoid does not continue to move
   @Override
   protected void end() {
     Robot.punch.doubleIdle();
   }
 
-  // Called when another command which requires one or more of the same
-  // subsystems is scheduled to run
+  // Ends the command in case of interruption
   @Override
   protected void interrupted() {
     end();
