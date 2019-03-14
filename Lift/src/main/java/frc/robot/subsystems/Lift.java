@@ -17,9 +17,11 @@ import frc.robot.RobotMap;
 public class Lift extends Subsystem {
   // Put methods for controlling this subsystem
   Talon talonL = null;
+  Talon talonR = null;
   // here. Call these from Commands.
   public Lift(){
     talonL = new Talon(RobotMap.LIFT_TALON_L);
+    talonR = new Talon(RobotMap.LIFT_TALON_R);
   }
 
   @Override
@@ -30,13 +32,16 @@ public class Lift extends Subsystem {
 
 public void Up() {
 talonL.set(0.5);
+talonR.set(0.5);
 }
 
 public void Down() {
   talonL.set(-0.5);
+  talonR.set(-0.5);
 }
 
 public void Stop() {
   talonL.set(0);
+  talonR.set(0);
 }
 }

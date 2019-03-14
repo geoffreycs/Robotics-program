@@ -32,12 +32,12 @@ public class Lift extends Subsystem {
 
 public void Up() {
 talonL.set(0.5);
-talonR.set(-0.5);
+talonR.set(0.5);
 }
 
 public void Down() {
   talonL.set(-0.5);
-  talonR.set(0.5);
+  talonR.set(-0.5);
 }
 
 public void Stop() {
