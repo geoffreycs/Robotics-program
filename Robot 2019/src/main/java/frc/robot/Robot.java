@@ -20,6 +20,7 @@ import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.Intake;
 import frc.robot.subsystems.Lift;
 import frc.robot.subsystems.Punch;
+import frc.robot.subsystems.Spool;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -35,6 +36,7 @@ public static ExampleSubsystem subsystem = new ExampleSubsystem();
   public static Intake Intake = new Intake();
   public static Lift Lift = new Lift();
   public static Punch punch = new Punch();
+  public static Spool Spool = new Spool();
   public static OI oi;
 
 

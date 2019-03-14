@@ -44,6 +44,8 @@ public class RobotMap {
   //Pneumatics
   public static final int doubleSolenoid1 = 1;
   public static final int doubleSolenoid2 = 0;
+  //Spool/Winch
+  public static final int SPOOL_TALON_SP = 3;
   //public static final int SUBSYSTESIDE_POSITION_SPEEDCONTROLLER = PWM Port;
 
   //Joystick

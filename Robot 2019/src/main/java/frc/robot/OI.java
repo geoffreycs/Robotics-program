@@ -15,6 +15,8 @@ import frc.robot.commands.Down;
 import frc.robot.commands.In;
 import frc.robot.commands.Out;
 import frc.robot.commands.Up;
+import frc.robot.commands.SpIn;
+import frc.robot.commands.SpOut;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -29,6 +31,8 @@ Button button1 = new JoystickButton(driverController, 1);
 Button button4 = new JoystickButton(driverController, 4);
 Button button2 = new JoystickButton(driverController, 2);
 Button button3 = new JoystickButton(driverController, 3);
+Button button10 = new JoystickButton(driverController, 10);
+Button button8 = new JoystickButton(driverController, 8);
 JoystickButton doublePunch = new JoystickButton(driverController, 5);
 JoystickButton doubleRetract = new JoystickButton(driverController, 6);
 
@@ -45,6 +49,10 @@ public Joystick getDriverController() {
     button2.whileHeld(new In());
     button3 = new JoystickButton(driverController, 3);
     button3.whileHeld(new Out());
+    button10 = new JoystickButton(driverController, 10);
+    button10.whileHeld(new SpIn());
+    button8 = new JoystickButton(driverController, 8);
+    button8.whileHeld(new SpOut());
     doublePunch.whileHeld(new DoublePunch(true));
     doubleRetract.whileHeld(new DoublePunch(false));
 

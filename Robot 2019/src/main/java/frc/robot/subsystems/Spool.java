@@ -14,34 +14,25 @@ import frc.robot.RobotMap;
 /**
  * Add your docs here.
  */
-public class Lift extends Subsystem {
+public class Spool extends Subsystem {
   // Put methods for controlling this subsystem
-  Talon talonL = null;
-  Talon talonR = null;
+  Talon talon2 = null;
   // here. Call these from Commands.
-  public Lift(){
-    talonL = new Talon(RobotMap.LIFT_TALON_L);
-    talonR = new Talon(RobotMap.LIFT_TALON_R);
-  }
-
+public Spool(){
+  talon2 = new Talon(RobotMap.SPOOL_TALON_SP);
+}
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
   }
-
-public void Up() {
-talonL.set(0.5);
-talonR.set(-0.5);
+public void SpOut() {
+talon2.set(-0.75);
 }
-
-public void Down() {
-  talonL.set(-0.5);
-  talonR.set(0.5);
+public void SpIn() {
+  talon2.set(0.75);
 }
-
 public void Stop() {
-  talonL.set(0);
-  talonR.set(0);
+  talon2.set(0);
 }
 }
