@@ -33,8 +33,8 @@ Button button2 = new JoystickButton(driverController, 2);
 Button button3 = new JoystickButton(driverController, 3);
 Button button10 = new JoystickButton(driverController, 10);
 Button button8 = new JoystickButton(driverController, 8);
-JoystickButton doublePunch = new JoystickButton(driverController, 5);
-JoystickButton doubleRetract = new JoystickButton(driverController, 6);
+Button doublePunch = new JoystickButton(driverController, 5);
+Button doubleRetract = new JoystickButton(driverController, 6);
 
 public Joystick getDriverController() {
   return driverController;

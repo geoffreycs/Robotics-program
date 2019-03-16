@@ -27,12 +27,12 @@ public class Punch extends Subsystem {
   // "Punches" single solenoid outwards
   // "Punches" double solenoid outwards
   public void doublePunch(){
-    doubleS.set(DoubleSolenoid.Value.kReverse);
+    doubleS.set(DoubleSolenoid.Value.kForward);
   }
 
   // Retracts double solenoid
   public void doubleRetract(){
-    doubleS.set(DoubleSolenoid.Value.kForward);
+    doubleS.set(DoubleSolenoid.Value.kReverse);
   }
 
   // Ensures no movement of double solenoid

@@ -7,6 +7,7 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -41,6 +42,12 @@ public class Drivetrain extends Subsystem {
 
     differentialDrive = new DifferentialDrive(leftMotors, rightMotors);
   }
+
+  public void driveJoystick(Joystick joystick, double speed) {
+		
+		differentialDrive.arcadeDrive(joystick.getX()*speed, joystick.getY()*speed);
+	}
+	
 
   public void arcadeDrive(double moveSpeed, double rotateSpeed) {
     differentialDrive.arcadeDrive(moveSpeed, rotateSpeed);
