@@ -26,35 +26,39 @@ public class OI {
   public static final String driveController = null;
 
   public Joystick driverController = new Joystick(RobotMap.OI_DRIVE_CONTROLLER);
+  public Joystick auxController = new Joystick(RobotMap.OI_AUX_CONTROLLER);
 
-Button button1 = new JoystickButton(driverController, 1);
-Button button4 = new JoystickButton(driverController, 4);
-Button button2 = new JoystickButton(driverController, 2);
-Button button3 = new JoystickButton(driverController, 3);
-Button button10 = new JoystickButton(driverController, 10);
-Button button8 = new JoystickButton(driverController, 8);
-Button doublePunch = new JoystickButton(driverController, 5);
-Button doubleRetract = new JoystickButton(driverController, 6);
+
+
+Button auxbutton12 = new JoystickButton(auxController, 11);
+Button auxbutton11 = new JoystickButton(auxController, 12);
+Button auxbutton2 = new JoystickButton(auxController, 2);
+Button auxbutton1 = new JoystickButton(auxController, 1);
+Button auxbutton10 = new JoystickButton(auxController, 10);
+Button auxbutton9 = new JoystickButton(auxController, 9);
+Button auxbutton3 = new JoystickButton(auxController, 3);
+Button auxbutton4 = new JoystickButton(auxController, 4);
+
 
 public Joystick getDriverController() {
   return driverController;
 }
 
   public OI() {
-    button4 = new JoystickButton(driverController, 4);
-    button4.whileHeld(new Up());
-    button1 = new JoystickButton(driverController, 1);
-    button1.whileHeld(new Down());
-    button2 = new JoystickButton(driverController, 2);
-    button2.whileHeld(new In());
-    button3 = new JoystickButton(driverController, 3);
-    button3.whileHeld(new Out());
-    button10 = new JoystickButton(driverController, 10);
-    button10.whileHeld(new SpIn());
-    button8 = new JoystickButton(driverController, 8);
-    button8.whileHeld(new SpOut());
-    doublePunch.whileHeld(new DoublePunch(true));
-    doubleRetract.whileHeld(new DoublePunch(false));
+    //button4 = new JoystickButton(driverController, 4);
+    auxbutton11.whileHeld(new Up());
+    //button1 = new JoystickButton(driverController, 1);
+    auxbutton12.whileHeld(new Down());
+    //button2 = new JoystickButton(driverController, 2);
+    auxbutton2.whileHeld(new In());
+    //button3 = new JoystickButton(driverController, 3);
+    auxbutton1.whileHeld(new Out());
+    //button10 = new JoystickButton(driverController, 10);
+    auxbutton10.whileHeld(new SpIn());
+    //button8 = new JoystickButton(driverController, 8);
+    auxbutton9.whileHeld(new SpOut());
+    auxbutton3.whileHeld(new DoublePunch(true));
+    auxbutton4.whileHeld(new DoublePunch(false));
 
 
 

@@ -45,7 +45,7 @@ public class Drivetrain extends Subsystem {
 
   public void driveJoystick(Joystick joystick, double speed) {
 		
-		differentialDrive.arcadeDrive(joystick.getX()*speed, joystick.getY()*speed);
+		differentialDrive.arcadeDrive(joystick.getX()*speed, -joystick.getY()*speed);
 	}
 	
 

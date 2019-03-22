@@ -20,13 +20,14 @@ public class Out extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    Robot.Intake.Out();
+    
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.oi.driverController.getRawButton(3);
+    Robot.Intake.Out();
+    
   }
 
   // Make this return true when this Command no longer needs to run execute()
@@ -39,6 +40,7 @@ public class Out extends Command {
   @Override
   protected void end() {
     Robot.Intake.Stop();
+    
   }
 
   // Called when another command which requires one or more of the same
@@ -46,6 +48,6 @@ public class Out extends Command {
   @Override
   protected void interrupted() {
     end();
-
+    System.out.println("Interrupted");
   }
 }

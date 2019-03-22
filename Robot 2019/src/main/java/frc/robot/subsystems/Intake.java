@@ -7,9 +7,10 @@
 
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.Talon;
+//import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
+import edu.wpi.first.wpilibj.Talon;
 
 /**
  * Add your docs here.
@@ -27,12 +28,15 @@ public Intake(){
     // setDefaultCommand(new MySpecialCommand());
   }
 public void Out() {
-talon2.set(-0.75);
+talon2.set(0.65);
+System.out.println("Out");
 }
 public void In() {
-  talon2.set(0.75);
+  talon2.set(-0.65);
+  System.out.println("In");
 }
 public void Stop() {
   talon2.set(0);
+  System.out.println("Stop");
 }
 }

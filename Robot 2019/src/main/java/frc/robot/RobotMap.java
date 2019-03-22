@@ -7,11 +7,6 @@
 
 package frc.robot;
 
-//import edu.wpi.first.wpilibj.RobotDrive;
-//import edu.wpi.first.wpilibj.SpeedController;
-//import edu.wpi.first.wpilibj.Talon;
-//import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
@@ -50,6 +45,7 @@ public class RobotMap {
 
   //Joystick
   public static final int OI_DRIVE_CONTROLLER = 0;
+  public static final int OI_AUX_CONTROLLER = 1;
 //public static final String lift = null;
   // If you are using multiple modules, make sure to define both the port
   // number and the module. For example you with a rangefinder:

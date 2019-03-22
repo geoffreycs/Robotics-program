@@ -7,6 +7,7 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import frc.robot.RobotMap;
@@ -19,9 +20,13 @@ public class Lift extends Subsystem {
   Talon talonL = null;
   Talon talonR = null;
   // here. Call these from Commands.
+
+
   public Lift(){
     talonL = new Talon(RobotMap.LIFT_TALON_L);
     talonR = new Talon(RobotMap.LIFT_TALON_R);
+
+    SpeedControllerGroup liftMotors = new SpeedControllerGroup(talonL, talonR);
   }
 
   @Override
@@ -31,17 +36,17 @@ public class Lift extends Subsystem {
   }
 
 public void Up() {
-talonL.set(0.5);
-talonR.set(-0.5);
+talonL.set(-0.65);
+talonR.set(-0.65);
 }
 
 public void Down() {
-  talonL.set(-0.5);
-  talonR.set(0.5);
+  talonL.set(0.15);
+  talonR.set(0.15);
 }
 
 public void Stop() {
-  talonL.set(0);
-  talonR.set(0);
+  talonL.set(-0.2);
+  talonR.set(-0.2);
 }
 }
