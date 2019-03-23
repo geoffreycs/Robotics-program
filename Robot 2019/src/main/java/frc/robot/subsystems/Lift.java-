@@ -36,13 +36,13 @@ public class Lift extends Subsystem {
   }
 
 public void Up() {
-talonL.set(-0.65);
-talonR.set(-0.65);
+talonL.set(-1);
+talonR.set(-1);
 }
 
 public void Down() {
-  talonL.set(0.15);
-  talonR.set(0.15);
+  talonL.set(1);
+  talonR.set(1);
 }
 
 public void Stop() {

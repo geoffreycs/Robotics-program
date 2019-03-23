@@ -18,7 +18,8 @@ import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.Drivetrain;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.Intake;
-import frc.robot.subsystems.Lift;
+//import frc.robot.subsystems.Lift;
+import frc.robot.subsystems.LiftW;
 import frc.robot.subsystems.Punch;
 import frc.robot.subsystems.Spool;
 
@@ -34,7 +35,8 @@ public class Robot extends TimedRobot {
 public static ExampleSubsystem subsystem = new ExampleSubsystem();
   public static Drivetrain drivetrain = null;
   public static Intake Intake = new Intake();
-  public static Lift Lift = new Lift();
+  //public static Lift Lift = new Lift();
+  public static LiftW LiftW = new LiftW();
   public static Punch punch = new Punch();
   public static Spool Spool = new Spool();
   public static OI oi;

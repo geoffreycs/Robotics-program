@@ -34,11 +34,13 @@ public class RobotMap {
   //Intake
   public static final int INTAKE_TALON_2 = 2;
   //Lift
-  public static final int LIFT_TALON_L = 9;
-  public static final int LIFT_TALON_R = 8;
+ // public static final int LIFT_TALON_L = 9;
+  //public static final int LIFT_TALON_R = 8;
   //Pneumatics
   public static final int doubleSolenoid1 = 1;
   public static final int doubleSolenoid2 = 0;
+  public static final int doubleSolenoid3 = 3;
+  public static final int doubleSolenoid4 = 4;
   //Spool/Winch
   public static final int SPOOL_TALON_SP = 3;
   //public static final int SUBSYSTESIDE_POSITION_SPEEDCONTROLLER = PWM Port;

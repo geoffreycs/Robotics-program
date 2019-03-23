@@ -9,41 +9,48 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
-//import frc.robot.RobotMap;
 
-public class DriveArcade extends Command {
-  public DriveArcade() {
-    // Use requires() here to declare subsystem dependencies
-    // eg. requires(chassis);
-    requires(Robot.drivetrain);
+public class Weights extends Command {
+
+  // True direction indicates "punching," false indicates retracting
+  // of the solenoid
+  boolean direction = true;
+
+  public Weights(boolean direction) {
+    this.direction = direction;
   }
 
-  // Called just before this Command runs the first time
+  // Making sure the solenoid is not already moving before
+  // executing the punch/retract
   @Override
   protected void initialize() {
+
+    Robot.punch.doubleIdle();
   }
 
-  // Called repeatedly when this Command is scheduled to run
+  // Takes in the boolean from the constructor to punch or retract
   @Override
   protected void execute() {
-
-    Robot.drivetrain.driveJoystick(Robot.oi.getDriverController(), 0.9);
+    if(direction){
+      Robot.LiftW.Weights();
+    }else{
+      Robot.LiftW.Down();
+    }
   }
 
-  // Make this return true when this Command no longer needs to run execute()
+  // Returns true immediately so execute only runs once
   @Override
   protected boolean isFinished() {
     return false;
   }
 
-  // Called once after isFinished returns true
+  // Ensures that the solenoid does not continue to move
   @Override
   protected void end() {
-    Robot.drivetrain.arcadeDrive(0,0);
+    Robot.punch.doubleIdle();
   }
 
-  // Called when another command which requires one or more of the same
-  // subsystems is scheduled to run
+  // Ends the command in case of interruption
   @Override
   protected void interrupted() {
     end();

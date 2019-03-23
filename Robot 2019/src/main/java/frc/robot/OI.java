@@ -11,12 +11,13 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import frc.robot.commands.DoublePunch;
-import frc.robot.commands.Down;
+//import frc.robot.commands.Down;
 import frc.robot.commands.In;
 import frc.robot.commands.Out;
-import frc.robot.commands.Up;
+//import frc.robot.commands.Up;
 import frc.robot.commands.SpIn;
 import frc.robot.commands.SpOut;
+import frc.robot.commands.Weights;
 
 /**
  * This class is the glue that binds the controls on the physical operator
@@ -30,8 +31,8 @@ public class OI {
 
 
 
-Button auxbutton12 = new JoystickButton(auxController, 11);
-Button auxbutton11 = new JoystickButton(auxController, 12);
+Button auxbutton11 = new JoystickButton(auxController, 11);
+Button auxbutton12 = new JoystickButton(auxController, 12);
 Button auxbutton2 = new JoystickButton(auxController, 2);
 Button auxbutton1 = new JoystickButton(auxController, 1);
 Button auxbutton10 = new JoystickButton(auxController, 10);
@@ -46,9 +47,9 @@ public Joystick getDriverController() {
 
   public OI() {
     //button4 = new JoystickButton(driverController, 4);
-    auxbutton11.whileHeld(new Up());
+   // auxbutton12.whileHeld(new Up());
     //button1 = new JoystickButton(driverController, 1);
-    auxbutton12.whileHeld(new Down());
+  // auxbutton11.whileHeld(new Down());
     //button2 = new JoystickButton(driverController, 2);
     auxbutton2.whileHeld(new In());
     //button3 = new JoystickButton(driverController, 3);
@@ -59,6 +60,8 @@ public Joystick getDriverController() {
     auxbutton9.whileHeld(new SpOut());
     auxbutton3.whileHeld(new DoublePunch(true));
     auxbutton4.whileHeld(new DoublePunch(false));
+    auxbutton11.whileHeld(new Weights(true));
+    auxbutton12.whileHeld(new Weights(false));
 
 
 
