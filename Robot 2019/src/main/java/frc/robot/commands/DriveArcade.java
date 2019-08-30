@@ -18,6 +18,11 @@ public class DriveArcade extends Command {
     requires(Robot.drivetrain);
   }
 
+  //Stuff
+  double finalPower = 0.6; //Actual power; change it here
+  double currentPower = finalPower/4;
+  int loopCount = 0;
+
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
@@ -26,8 +31,18 @@ public class DriveArcade extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-
-    Robot.drivetrain.driveJoystick(Robot.oi.getDriverController(), 0.9);
+    if (loopCount == 0) {
+      loopCount = 1;
+    }
+    else if (loopCount == 1) {
+      loopCount = 2;
+      currentPower = finalPower/2;
+    }
+    else if (loopCount == 2) {
+      loopCount = 10;
+      currentPower = finalPower;
+    }
+    Robot.drivetrain.driveJoystick(Robot.oi.getDriverController(), currentPower);
   }
 
   // Make this return true when this Command no longer needs to run execute()
